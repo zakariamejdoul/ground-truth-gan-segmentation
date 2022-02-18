@@ -61,6 +61,50 @@ The purpose of the generator is to take an input image and convert it into the d
 
 ### The Discriminator Architecture
 
+The task of the discriminator is to measure the similarity of the input image with an unknown image. This unknown image belongs to the dataset (as a target image) or is an output image provided by the generator. The PatchGAN discriminator of the Pix2Pix network is used as a single component to classify the individual patches (N x N) of the image as real or fake. 
+<br>As stated by the authors, since the number of parameters of the PatchGAN discriminator is very small, the classification of the entire image is faster. The architecture of the PatchGAN discriminator is shown in the figure below :
+
+![alt image](static/discriminator_arch.png)
+
+>**The reason this architecture is called "PatchGAN" is that each pixel in the output of the discriminator (30 × 30 image) corresponds to the 70×70 patch in the input image. It is also worth noting that since the size of the input images is 256×256, the patches overlap considerably.**
+
+### The Training Strategy
+
+After defining the dataset, the Pix2Pix network weights are adjusted in two steps:
+
+1. In the first step, the discriminator (figure below) takes the input (satellite image)/target (ground truths with overlapping contours) and then input (satellite image)/output (generator output) pairs, to estimate their realism. Then, the adjustment of the discriminator weights is performed according to the classification error of the mentioned pairs.<br><br>
+    
+    ![img.png](static/step_1.png)
+2. In the second step, the generator weights (figure below) are adjusted using the output of the discriminator and the difference between the output images and the target images.<br><br>
+
+    ![img.png](static/step_2.png)
+
+### Loss function and model optimizer
+
+Gradually, with the help of an optimization function, the loss function learns to reduce the prediction error.
+<br>In our case we used the following function:
+
+![img.png](static/G_loss.png)
+
+with:
+
+![img.png](static/lc_gan.png)
+![img.png](static/l1_loss.png)
+
+The method used to modify neural network attributes such as weights and learning rate to reduce losses is `Adam Optimizer` (Adaptive Moment Estimation) which works with first and second order impulses. The intuition behind Adam is that we don't want to drive so fast just because we can jump over the minimum, we want to decrease the speed a bit for a careful search. In addition to storing an exponentially decaying average of past gradients squared like AdaDelta, Adam also keeps an exponentially decaying average of past gradients M(t).
+
+```
+generator_optimizer = tf.train.AdamOptimizer(2e-4, beta1=0.5)
+discriminator_optimizer = tf.train.AdamOptimizer(2e-4, beta1=0.5)
+```
+
+
+
+
+
+
+
+
 
 
 
