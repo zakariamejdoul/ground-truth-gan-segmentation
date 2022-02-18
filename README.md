@@ -150,7 +150,7 @@ _Zakaria Mejdoul_
 
 
 
-<br><br>_Enjoy generating Grounds Truths Segmentations :exclamation: :building:_
+<br><br>_Enjoy generating Grounds Truths Segmentations :houses: :v:_
 
 
 
