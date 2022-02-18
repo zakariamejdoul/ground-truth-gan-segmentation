@@ -116,13 +116,41 @@ The figure below illustrates the change in this metric :
 
 > We notice that the discriminator cost is much lower than that of the generator, this is due to the role that the discriminator exerts, that of the binary classification, the targets generated with true labels and other false ones, inciting the generator to increase its precision and to avoid the errors that it committed previously, thus, it generates targets close to the reality : thing that will be able to decrease its error gradually.
 
+## Model Test
+
+Model testing is the process where the performance of a fully trained model is evaluated on a test set.
+<br><br>The result of the test is shown in the figure below:
+
+![img.png](static/model_test.png)
+
+We can see that our model was able to make a good segmentation, which
+is elucidated by the strong resemblance between the label and the predicted image.
+
+The following figure shows a case where the model fails to segment the image:
+
+![img.png](static/model_test_failed.png)
+
+> To be able to segment images well with low densities of grounds footprints, the model still needs training, by increasing the number of epochs as mentioned in the main model paper [[2]](https://arxiv.org/pdf/1611.07004.pdf) which assigns 200 epochs to the hyperparameter which represents the number of epochs essential for training the GAN-based Pix2Pix model.
+
+## Conclusion
+
+The presented experiment aims at using the Pix2Pix network to segment the footprint of a building. The results of Pix2Pix on the test dataset seem to be good, but the quality of the segmentation can still be improved through more satellite images and labels and more training of the model in question on high performance computing resources.
+
+## Resources
+
+[1] [AIRS (Aerial Imagery for Roof Segmentation)A LARGE-SCALE DATASET TOWARDS AUTOMATIC MAPPING OF BUILDINGS](https://www.kaggle.com/atilol/resized-aerialimageryforroofsegmentation)
+
+[2] [Image-to-Image Translation with Conditional Adversarial Networks](https://arxiv.org/pdf/1611.07004.pdf)
+ 
+## Author
+_Zakaria Mejdoul_
 
 
 
 
 
 
-
+<br><br>_Enjoy generating Grounds Truths Segmentations :exclamation: :building:_
 
 
 
