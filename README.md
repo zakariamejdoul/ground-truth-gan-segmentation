@@ -100,7 +100,7 @@ discriminator_optimizer = tf.train.AdamOptimizer(2e-4, beta1=0.5)
 ## Model Training
 
 The training was applied on 875 images and spread over 50 epochs.
-<br>After loading the data and building the model based on a generator and a discriminator, we call the function `train()` which is the main model training loop which, after each epoch, displays the validation test by applying the current generation model on 15 batches from the validation dataset and displaying also the time that was necessary for the execution of the epoch in question, with a naked eye, we can see the progression of the generation of the segmentations or the labels of each satellite image as shown in the figures below :
+<br>After loading the data and building the model based on a generator and a discriminator, we call the function `train()` : the main model training loop which, after each epoch, displays the validation test by applying the current generation model on 15 batches from the validation dataset and displaying also the time that was necessary for the execution of the epoch in question, with a naked eye, we can see the progression of the generation of the segmentations or the labels of each satellite image as shown in the figures below :
 
 ![img.png](static/epoch_results.png)
 ![img.png](static/time_taken.png)
