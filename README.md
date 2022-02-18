@@ -108,6 +108,14 @@ The training was applied on 875 images and spread over 50 epochs.
 ## Model Evaluation
 
 While preparing the data and training a machine learning model is a key step in the machine learning pipeline, it is equally important to measure the performance of that trained model.
+<br>To evaluate the performance of our model, we stored and visualized the costs of the generator and discriminator during the training phase of the model.
+
+The figure below illustrates the change in this metric :
+
+![img.png](static/model_eval.png)
+
+> We notice that the discriminator cost is much lower than that of the generator, this is due to the role that the discriminator exerts, that of the binary classification, the targets generated with true labels and other false ones, inciting the generator to increase its precision and to avoid the errors that it committed previously, thus, it generates targets close to the reality : thing that will be able to decrease its error gradually.
+
 
 
 
