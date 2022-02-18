@@ -105,6 +105,10 @@ The training was applied on 875 images and spread over 50 epochs.
 ![img.png](static/epoch_results.png)
 ![img.png](static/time_taken.png)
 
+## Model Evaluation
+
+While preparing the data and training a machine learning model is a key step in the machine learning pipeline, it is equally important to measure the performance of that trained model.
+
 
 
 
