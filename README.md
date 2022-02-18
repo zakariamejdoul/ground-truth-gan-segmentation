@@ -48,7 +48,7 @@ The following figure shows an example of an image with its contoured label :
 
 Pix2Pix is based on conditional generative adversarial networks (CGAN) to learn a mapping function that maps an input image into an output image. <br>Pix2Pix like GAN, CGAN is also composed of two networks, the generator and the discriminator. The figure below shows a very high level view of the Pix2Pix architecture:
 
-![alt image](static/pix2pix.PNG)
+![alt image](static/pix2pix.png)
 
 ### The Generator Architecture
 
