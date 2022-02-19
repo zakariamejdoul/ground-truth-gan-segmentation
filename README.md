@@ -1,4 +1,4 @@
-# Ground Truth Segmentation with GAN Model
+# Ground Truth Images Segmentation with GAN-based Model
 
 ## Notes
 Clone the project on your machine with :
