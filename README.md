@@ -11,7 +11,7 @@ git clone https://github.com/zakariamejdoul/ground-truth-gan-segmentation.git
 
 Image segmentation is an image processing operation that aims to group pixels together according to predefined criteria. The pixels are thus grouped into regions, which constitute a paving or a partition of the image.<br><br>
 Generative adversarial networks (GANs) are a class of unsupervised learning algorithms. These algorithms were introduced by Goodfellow et al. 2014. They are used to generate images with a high degree of realism.
-<br><br>In this project, we will apply the DCGAN approach for ground truth segmentation operation of satellite images.
+<br><br>In this project, we will apply the CGAN approach for ground truth segmentation operation of satellite images.
 
 ## Dataset
 
